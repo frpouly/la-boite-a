@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
+<% content_for :title, "La boîte à #{@person.name}" %>
+
+<h1>La boîte à <%= @person.name %><h1>
+
 <%= render @person %>
+<%= render "people/quotes", person: @person %>
 
 <div>
   <%= link_to "Edit this person", edit_person_path(@person) %> |

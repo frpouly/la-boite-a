@@ -1,0 +1,12 @@
+<%= form_with(model: [ person, Quote.new ]) do |form| %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+    <%= form.file_field :audio_data %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

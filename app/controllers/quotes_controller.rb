@@ -1,38 +1,11 @@
 class QuotesController < ApplicationController
-  before_action :set_quote, only: %i[ show edit update destroy ]
-
-  # GET /quotes or /quotes.json
-  def index
-    @quotes = Quote.all
-  end
-
-  # GET /quotes/1 or /quotes/1.json
-  def show
-  end
-
-  # GET /quotes/new
-  def new
-    @quote = Quote.new
-  end
-
-  # GET /quotes/1/edit
-  def edit
-  end
+  before_action :set_person
 
   # POST /quotes or /quotes.json
   def create
-    @quote = Quote.new(quote_params)
-    binding.break
+    @person.quotes.create! quote_params
 
-    respond_to do |format|
-      if @quote.save
-        format.html { redirect_to @quote, notice: "Quote was successfully created." }
-        format.json { render :show, status: :created, location: @quote }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @quote.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to @person
   end
 
   # PATCH/PUT /quotes/1 or /quotes/1.json
@@ -60,8 +33,8 @@ class QuotesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_quote
-      @quote = Quote.find(params[:id])
+    def set_person
+      @person = Person.find(params[:person_id])
     end
 
     # Only allow a list of trusted parameters through.
