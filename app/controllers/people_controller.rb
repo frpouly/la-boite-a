@@ -10,6 +10,13 @@ class PeopleController < ApplicationController
   def show
   end
 
+  # GET /Sarkozy
+  def show_by_name
+    @person = Person.find_by(name: params.fetch(:name))
+    render :show
+  end
+
+
   # GET /people/new
   def new
     @person = Person.new

@@ -1,9 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
-<div id="quotes">
+<div class="flex items-center" id="quotes">
   <% @person.quotes.each do |quote| %>
     <%= render quote %>
   <% end %>
 </div>
-
-<%= render "quotes/new", person: @person %>

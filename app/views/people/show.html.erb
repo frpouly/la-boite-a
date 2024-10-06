@@ -2,14 +2,14 @@
 
 <% content_for :title, "La boîte à #{@person.name}" %>
 
-<h1>La boîte à <%= @person.name %><h1>
+<div class="flex h-dvh v-screen">
+  <div class="flex-1">
+    <h1>La boîte à <%= @person.name %><h1>
+    <%= render @person %>
+  </div>
 
-<%= render @person %>
-<%= render "people/quotes", person: @person %>
-
-<div>
-  <%= link_to "Edit this person", edit_person_path(@person) %> |
-  <%= link_to "Back to people", people_path %>
-
-  <%= button_to "Destroy this person", @person, method: :delete %>
+  <div class="flex-2">
+    <%= render "people/quotes", person: @person %>
+  </div>
 </div>
+  
