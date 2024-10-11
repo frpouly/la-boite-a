@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="flex items-center justify-center flex-col sm:flex-row" id="quotes">
+<div class="flex items-center justify-center flex-col md:flex-row" id="quotes">
   <% @person.quotes.each do |quote| %>
     <%= render quote %>
   <% end %>
