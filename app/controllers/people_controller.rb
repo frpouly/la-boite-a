@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ new edit create update destroy ]
 
   # GET /people or /people.json
   def index
@@ -15,7 +16,6 @@ class PeopleController < ApplicationController
     @person = Person.find_by(name: params.fetch(:name))
     render :show
   end
-
 
   # GET /people/new
   def new

@@ -1,5 +1,6 @@
 class QuotesController < ApplicationController
   before_action :set_person
+  before_action :authenticate_user!, only: %i[ create update destroy ]
 
   # POST /quotes or /quotes.json
   def create
