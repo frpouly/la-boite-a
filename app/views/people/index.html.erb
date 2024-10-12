@@ -1,16 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "People" %>
+<% content_for :title, "La boîte à..." %>
 
-<h1>People</h1>
-
-<div id="people">
-  <% @people.each do |person| %>
-    <%= render person %>
-    <p>
-      <%= link_to "Show this person", show_by_name_path(name: person.name) %>
-    </p>
-  <% end %>
+<div class="items-center justify-center w-full text-center my-8">
+  <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+    La boîte à...
+  </h1>
 </div>
 
-<%= link_to "New person", new_person_path %>
+<div id="people" class="flex items-center justify-center flex-col md:flex-row md:flex-wrap">
+  <% @people.each do |person| %>
+    <%= render "person_card", person: %>
+  <% end %>
+</div>
