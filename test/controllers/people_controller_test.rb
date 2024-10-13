@@ -6,7 +6,6 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
   end
 
   class PeopleControllerTestNotLoggedInTest < PeopleControllerTest
-
     test "should get index" do
       get people_url
       assert_response :success
@@ -19,7 +18,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
 
     test "should not create person" do
       assert_difference("Person.count", 0) do
-        post people_url, params: { person: { name: 'Mélenchon' } }
+        post people_url, params: { person: { name: "Mélenchon" } }
       end
 
       assert_response :redirect
@@ -36,8 +35,8 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     end
 
     test "should not update person" do
-      patch person_url(@person), params: { person: { name: 'New name' } }
-      assert_equal(@person.name, 'Sarkozy')
+      patch person_url(@person), params: { person: { name: "New name" } }
+      assert_equal(@person.name, "Sarkozy")
       assert_redirected_to new_user_session_url
     end
 
