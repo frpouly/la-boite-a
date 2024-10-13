@@ -1,0 +1,17 @@
+sarkozy_picture:
+  name: picture
+  record_type: Person
+  record_id: 1
+  blob: sarkozy_picture_blob
+
+teletravail_audio:
+  name: audio_data
+  record_type: Quote
+  record_id: 1
+  blob: teletravail_blob
+
+indignite_audio:
+  name: audio_data
+  record_type: Quote
+  record_id: 2
+  blob: teletravail_blob
