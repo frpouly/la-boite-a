@@ -13,7 +13,7 @@ class PeopleController < ApplicationController
 
   # GET /Sarkozy
   def show_by_name
-    @person = Person.find_by(name: params.fetch(:name))
+    @person = Person.find_by!(name: params.fetch(:name))
     render :show
   end
 
