@@ -21,8 +21,6 @@ ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development" \
-    GOOGLE_CLIENT_ID="GOOGLE_CLIENT_ID" \
-    GOOGLE_CLIENT_SECRET="GOOGLE_CLIENT_SECRET" \
     SECRET_KEY_BASE_DUMMY=1
 
 # Throw-away build stage to reduce size of final image

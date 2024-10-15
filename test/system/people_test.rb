@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class PeopleTest < ApplicationSystemTestCase
   setup do
-    @person = people(:one)
+    @person = people(:sarkozy)
   end
 
   test "visiting the index" do
