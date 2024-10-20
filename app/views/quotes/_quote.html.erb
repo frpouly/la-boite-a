@@ -1,5 +1,17 @@
-<div id="<%= dom_id quote %>" class="w-full md:w-auto m-1">
-  <button class="quote-button w-full bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-8 border border-gray-400 rounded shadow" data-audio="<%= quote.audio_url %>">
+<div id="<%= dom_id quote %>" class="quote-button w-full md:w-auto m-1" data-audio="<%= quote.audio_url %>" data-id="<%= quote.id %>">
+  <button class="w-full bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-8 border border-gray-400 rounded shadow">
      <%= quote.name %>
   </button>
 </div>
+
+<div id="<%= dom_id quote %>_share" class="w-full md:w-auto m-1 hidden">
+  <button class="w-full flex bg-white z-10 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-8 border border-gray-400 rounded shadow">
+    <span class="quote-button quote-button-share inline-block pr-4" data-audio="<%= quote.audio_url %>" data-id="<%= quote.id %>"><%= quote.name %></span>
+    <svg fill="#000000" width="20px" height="20px" viewBox="0 0 36 36" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <title>paste-solid</title>
+      <path d="M30,12H26v2h4v2h2V14A2,2,0,0,0,30,12Z" class="clr-i-solid clr-i-solid-path-1"></path><rect x="30" y="18" width="2" height="6" class="clr-i-solid clr-i-solid-path-2"></rect><path d="M30,30H28v2h2a2,2,0,0,0,2-2V26H30Z" class="clr-i-solid clr-i-solid-path-3"></path><rect x="4" y="4" width="20" height="20" rx="2" ry="2" class="clr-i-solid clr-i-solid-path-4"></rect><rect x="20" y="30" width="6" height="2" class="clr-i-solid clr-i-solid-path-5"></rect><path d="M14,26H12v4a2,2,0,0,0,2,2h4V30H14Z" class="clr-i-solid clr-i-solid-path-6"></path>
+      <rect x="0" y="0" width="36" height="36" fill-opacity="0"/>
+    </svg>
+  </button>
+</div>
+
