@@ -1,6 +1,8 @@
 function hide_all_share_buttons() {
     for(let button of document.getElementsByClassName("default-quote-button")) {
-        button.classList.remove("hidden");
+        var quote_to_play_id = document.getElementById('quote_to_play')?.dataset?.id;
+        if(button.dataset.id != quote_to_play_id || (button.dataset.id == quote_to_play_id && !document.getElementById("quote_" + button.dataset.id + "_share").classList.contains("hidden")))
+            button.classList.remove("hidden");
         document.getElementById("quote_" + button.dataset.id + "_share").classList.add("hidden");
     }
 }
@@ -20,6 +22,7 @@ window.onload = function() {
     var play_buttons = document.getElementsByClassName("quote-button");
     var people_cards = document.getElementsByClassName("person-card");
     var copy_quote_buttons = document.getElementsByClassName("copy-quote-url");
+    var audio = null;
 
     for(let button of play_buttons) {
         button.onclick = (event) => {
@@ -27,7 +30,12 @@ window.onload = function() {
                 displayShareButton(event.currentTarget.dataset.id);
                 event.currentTarget.classList.add("hidden");
             }
-            new Audio(event.currentTarget.dataset.audio).play(); 
+            if(audio != null) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+            audio = new Audio(event.currentTarget.dataset.audio);
+            audio.play();
         }
     };
     
