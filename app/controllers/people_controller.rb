@@ -14,6 +14,7 @@ class PeopleController < ApplicationController
   # GET /Sarkozy
   def show_by_name
     @person = Person.find_by!(name: params.fetch(:name))
+    @play_id = params[:play_id].to_i
     render :show
   end
 
