@@ -1,5 +1,9 @@
 # CHANGELOG.md
 
+### Added
+
+- Favicon
+
 ## 0.2.1 - 2024-20-20
 
 ### Fixed
