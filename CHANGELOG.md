@@ -1,10 +1,13 @@
 # CHANGELOG.md
 
+## 0.3.0 - 2024-10-20
+
 ### Added
 
+- Litestack metrics in production environment
 - Favicon
 
-## 0.2.1 - 2024-20-20
+## 0.2.1 - 2024-10-20
 
 ### Fixed
 

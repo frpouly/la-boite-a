@@ -37,4 +37,4 @@ test:
 production:
   <<: *default
   database: <%= Litesupport.root("production").join("data.sqlite3") %>
-
+  metrics: true
