@@ -1,11 +1,11 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.2.1"
+gem "rails", "~> 8"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", ">= 1.4"
+gem "sqlite3"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
@@ -34,7 +34,6 @@ gem "bootsnap", require: false
 gem "omniauth", "~> 2"
 gem "omniauth-google-oauth2", "~> 1"
 gem "omniauth-rails_csrf_protection"
-gem "litestack", "~> 0.4", ">= 0.4.4"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -61,6 +60,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "tailwindcss-rails", "~> 2.7"
+gem "tailwindcss-rails", "~> 4"
 
 gem "devise", "~> 4.9"
