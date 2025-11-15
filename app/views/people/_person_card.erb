@@ -1,4 +1,4 @@
-<nav id="<%= dom_id person %>" class="person-card flex flex-col hover:bg-neutral-500 hover:cursor-pointer bg-white dark:bg-neutral-700 shadow-sm border border-slate-200 dark:border-neutral-600 rounded-lg m-6 w-96" data-link="<%= show_by_name_path(name: person.name) %>">
+<nav id="<%= dom_id person %>" class="person-card flex flex-col hover:bg-neutral-500 hover:cursor-pointer bg-white dark:bg-neutral-700 shadow-sm border border-slate-200 dark:border-neutral-600 rounded-lg m-6 w-96" data-link="<%= show_by_nickname_path(nickname: person.nickname) %>">
   <figure class="m-2.5 overflow-hidden rounded-md h-80 flex justify-center items-center">
     <img class="w-full h-full object-cover" src="<%= person.picture_url %>" alt="Photo of <%= person.name %>" />
   </figure>
