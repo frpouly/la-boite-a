@@ -35,6 +35,7 @@
   </button>
 </section>
 
+<% if quote.id == @play_id %>
 <section <%= %(id=quote_to_play) if quote.id == @play_id %> class="quote-button w-full md:w-auto m-1 animate-bounce <%= "hidden" if quote.id != @play_id %>" data-id="<%= quote.id %>">
   <audio id="audio-<%= quote.id %>" preload="auto">
     <source src="<%= quote.audio_url %>" type="audio/mpeg">
@@ -44,3 +45,4 @@
     <%= quote.name %>
   </button>
 </section>
+<% end %>
