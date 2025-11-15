@@ -61,5 +61,6 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 4"
-
 gem "devise", "~> 4.9"
+gem "sitemap_generator"
+gem "whenever", require: false
