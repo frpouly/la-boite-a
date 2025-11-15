@@ -5,6 +5,7 @@ class Person < ApplicationRecord
   has_many :quotes
 
   validates :picture, presence: true
+  validates :nickname, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
 
   def picture_url
     polymorphic_url(picture, only_path: true)

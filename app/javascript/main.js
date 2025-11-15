@@ -34,7 +34,7 @@ window.onload = function() {
                 audio.pause();
                 audio.currentTime = 0;
             }
-            audio = new Audio(event.currentTarget.dataset.audio);
+            audio = document.getElementById(`audio-${event.currentTarget.dataset.id}`);
             audio.play();
         }
     };

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_15_194035) do
+ActiveRecord::Schema[8.0].define(version: 2025_11_15_222331) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -43,7 +43,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_15_194035) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nickname", null: false
     t.index ["name"], name: "index_people_on_name", unique: true
+    t.index ["nickname"], name: "index_people_on_nickname", unique: true
   end
 
   create_table "quotes", force: :cascade do |t|
@@ -51,6 +53,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_15_194035) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "person_id", null: false
+    t.text "transcript"
     t.index ["person_id"], name: "index_quotes_on_person_id"
   end
 

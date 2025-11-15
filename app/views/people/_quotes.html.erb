@@ -1,5 +1,31 @@
 <p style="color: green"><%= notice %></p>
 
+<% content_for :head do %>
+<script type="application/ld+json">
+<%= {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": @person.quotes.each_with_index.map do |quote, index|
+    {
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "AudioObject",
+        "name": quote.name,
+        "url": quote.audio_url,
+        "transcript": quote.transcript,
+        "description": "Citation prononcée par #{quote.person.name}.",
+        "author": {
+          "@type": "Person",
+          "name": quote.person.name
+        }
+      }.compact
+    }
+  end
+}.to_json.html_safe %>
+</script>
+<% end %>
+
 <div class="flex items-center justify-center flex-col md:flex-row md:flex-wrap" id="quotes">
   <% @person.quotes.each do |quote| %>
     <%= render quote %>
