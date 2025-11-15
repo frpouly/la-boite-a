@@ -36,7 +36,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
 
     test "should not update person" do
       patch person_url(@person), params: { person: { name: "New name" } }
-      assert_equal(@person.name, "Sarkozy")
+      assert_equal(@person.name, "Nicolas Sarkozy")
       assert_redirected_to new_user_session_url
     end
 
