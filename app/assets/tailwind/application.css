@@ -12,7 +12,6 @@
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
-@plugin '@tailwindcss/container-queries';
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
