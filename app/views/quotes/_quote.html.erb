@@ -1,18 +1,24 @@
-<div id="<%= dom_id quote %>" class="quote-button default-quote-button w-full md:w-auto m-1 <%= "hidden" if quote.id == @play_id %>" data-audio="<%= quote.audio_url %>" data-id="<%= quote.id %>">
+<section id="<%= dom_id quote %>" class="quote-button default-quote-button w-full md:w-auto m-1 <%= "hidden" if quote.id == @play_id %>" data-id="<%= quote.id %>">
+  <audio id="audio-<%= quote.id %>" preload="none">
+    <source src="<%= quote.audio_url %>" type="audio/mpeg">
+  </audio>
+  
   <button class="w-full bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-8 border border-gray-400 rounded shadow">
      <%= quote.name %>
   </button>
-</div>
 
-<div <%= %(id=quote_to_play) if quote.id == @play_id %> class="quote-button w-full md:w-auto m-1 animate-bounce <%= "hidden" if quote.id != @play_id %>" data-audio="<%= quote.audio_url %>" data-id="<%= quote.id %>">
-  <button class="w-full bg-cyan-500 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-8 border border-gray-400 rounded shadow">
-     <%= quote.name %>
-  </button>
-</div>
+  <span class="sr-only">
+    Lecture audio de la citation intitulée « <%= quote.name %> », prononcée par <%= quote.person.name %>.
+  </span>
+</section>
 
-<div id="<%= dom_id quote %>_share" class="w-full md:w-auto m-1 hidden">
+<section id="<%= dom_id quote %>_share" class="w-full md:w-auto m-1 hidden">
   <button class="w-full flex bg-white z-10 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-8 border border-gray-400 rounded shadow justify-center">
-    <span class="quote-button quote-button-share inline-block pr-4" data-audio="<%= quote.audio_url %>" data-id="<%= quote.id %>"><%= quote.name %></span>
+    <audio id="audio-<%= quote.id %>" preload="none">
+      <source src="<%= quote.audio_url %>" type="audio/mpeg">
+    </audio>
+    
+    <span class="quote-button quote-button-share inline-block pr-4" data-id="<%= quote.id %>"><%= quote.name %></span>
     <span class="copy-quote-url" data-id="<%= quote.id %>">
       <svg class="icon icon--xs" width="20" height="20" viewBox="0 0 16 16">
         <title>Copier le lien</title>
@@ -27,5 +33,14 @@
       </svg>
     </span>
   </button>
-</div>
+</section>
 
+<section <%= %(id=quote_to_play) if quote.id == @play_id %> class="quote-button w-full md:w-auto m-1 animate-bounce <%= "hidden" if quote.id != @play_id %>" data-id="<%= quote.id %>">
+  <audio id="audio-<%= quote.id %>" preload="auto">
+    <source src="<%= quote.audio_url %>" type="audio/mpeg">
+  </audio>
+  
+  <button class="w-full bg-cyan-500 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-8 border border-gray-400 rounded shadow">
+    <%= quote.name %>
+  </button>
+</section>
