@@ -51,6 +51,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_15_194035) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "person_id", null: false
+    t.text "transcript"
     t.index ["person_id"], name: "index_quotes_on_person_id"
   end
 
