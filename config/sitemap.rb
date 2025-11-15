@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = ENV['HOST'] || "https://la-boite-a.pouly.eu"
+SitemapGenerator::Sitemap.default_host = ENV["HOST"] || "https://la-boite-a.pouly.eu"
 
 SitemapGenerator::Sitemap.create do
   Person.find_each do |person|
